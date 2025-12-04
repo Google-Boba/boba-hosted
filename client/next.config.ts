@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const isProduction = process.env.NODE_ENV === "production";
+
 const cspHeader = `
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://cdnjs.buymeacoffee.com https://cdn.buymeacoffee.com https://www.googletagmanager.com https://www.google-analytics.com https://m.stripe.network;
@@ -12,7 +14,7 @@ const cspHeader = `
   base-uri 'self';
   form-action 'self';
   frame-ancestors 'none';
-  upgrade-insecure-requests;
+  ${isProduction ? "upgrade-insecure-requests;" : ""}
 `;
 
 const nextConfig: NextConfig = {

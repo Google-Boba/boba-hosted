@@ -2,6 +2,7 @@
   "ignores": [
     "autoprefixer",
     "postcss",
-    "postcss-load-config"
+    "postcss-load-config",
+    "@tailwindcss/postcss"
   ]
 }

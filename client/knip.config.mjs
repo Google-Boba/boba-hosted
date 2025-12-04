@@ -1,12 +1,8 @@
 export default {
   ignore: [
     'src/app/middleware.ts', // Explicitly ignore middleware file
+    'knip.config.mjs', // Config file
   ],
-  dependencies: {
-    include: [
-      'eslint-config-next', // Explicitly mark eslint-config-next as a dependency
-    ],
-  },
   ignorePatterns: [
     'node_modules/',
     'dist/',
@@ -14,4 +10,6 @@ export default {
     '**/.next/**',
   ],
   moduleResolution: 'node',
+  ignoreBinaries: ['autoprefixer', 'postcss-load-config'],
+  ignoreDependencies: ['autoprefixer', 'postcss-load-config'],
 };
